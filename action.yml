@@ -1,0 +1,10 @@
+name: 'Compare Version.md with Tag (Powershell)'
+description: 'This action compares content of the VERSION.md and the Tag. If not valid, the it will EXIT the workflow.'
+runs:
+  using: 'composite'
+  steps:
+    - name: Validate Version With Tag
+      shell: pwsh
+      run: |
+        $script = '${{ github.action_path }}/main.ps1'
+        & $script "${{ inputs.assemblypath }}" 
