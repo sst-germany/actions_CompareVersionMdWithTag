@@ -13,6 +13,6 @@ if ($tagName -notlike "releases/v*") {
 }
 
 if ($tagName -notmatch "^releases/v$markdownVersion$") {
-    Write-Error "Git tag does not match the expected format 'releases/v<markdownVersion>': $tagName"
+    Write-Error "Git tag does not match the expected format 'releases/v$markdownVersion$': $tagName"
     exit 1
 }
