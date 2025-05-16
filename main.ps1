@@ -3,7 +3,7 @@ $tagName = $env:GITHUB_REF_NAME
 Write-Host "Git-Tag: $tagName"
 
 # Get Version from VERSION.md
-$markdownVersion = Get-Content -Path "VERSION.md" | Select-Object -First 1
+$markdownVersion = (Get-Content -Path "VERSION.md" | Select-Object -First 1).Trim()
 Write-Host "VERSION.md: $markdownVersion"
 
 # Check tag scheme:
